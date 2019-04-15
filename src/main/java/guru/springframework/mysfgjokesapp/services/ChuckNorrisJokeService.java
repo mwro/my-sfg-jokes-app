@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ChuckNorrisJokeService implements JokeService {
 
-    private ChuckNorrisQuotes chuckNorrisQuotes;
+    private final ChuckNorrisQuotes chuckNorrisQuotes;
 
-    public ChuckNorrisJokeService() {
-        chuckNorrisQuotes = new ChuckNorrisQuotes();
+    public ChuckNorrisJokeService(ChuckNorrisQuotes chuckNorrisQuotes) {
+        this.chuckNorrisQuotes = chuckNorrisQuotes;
     }
 
     public String getJoke() {
